@@ -1,0 +1,37 @@
+﻿@page
+@model RazorPagesUI.Pages.Hits.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Hituri</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Hituri.NumeHit)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Hituri.NumeHit)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Hituri.DataDeLansare)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Hituri.DataDeLansare)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Hituri.Album)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Hituri.Album)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Hituri?.HitId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

@@ -1,0 +1,54 @@
+﻿@page
+@model RazorPagesUI.Pages.Concerts.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Concert[0].NumeConcert)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Concert[0].DataConcert)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Concert[0].Locatie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Concert[0].Artist)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Concert) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeConcert)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataConcert)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Locatie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Artist.ArtistId)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ConcertId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ConcertId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ConcertId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

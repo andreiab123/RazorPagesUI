@@ -1,0 +1,42 @@
+﻿@page
+@model RazorPagesUI.Pages.Hits.IndexModel
+
+@{
+    ViewData["Title"] = "Hituri Index";
+}
+
+<h1 class="custom-heading">Hituri Index</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-custom">Create New Hit</a>
+</p>
+
+<div class="table-responsive">
+    <table class="table table-custom table-hover">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Hituri[0].NumeHit)</th>
+                <th>@Html.DisplayNameFor(model => model.Hituri[0].DataDeLansare)</th>
+                <th>@Html.DisplayNameFor(model => model.Hituri[0].Album)</th>
+                <th>Artist</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var hit in Model.Hituri)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => hit.NumeHit)</td>
+                    <td>@Html.DisplayFor(modelItem => hit.DataDeLansare, "{0:dd/MM/yyyy}")</td>
+                    <td>@Html.DisplayFor(modelItem => hit.Album)</td>
+                    <td>@Html.DisplayFor(modelItem => hit.Artist.ArtistName)</td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@hit.HitId" class="btn btn-sm btn-warning">Edit</a>
+                        <a asp-page="./Details" asp-route-id="@hit.HitId" class="btn btn-sm btn-info">Details</a>
+                        <a asp-page="./Delete" asp-route-id="@hit.HitId" class="btn btn-sm btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

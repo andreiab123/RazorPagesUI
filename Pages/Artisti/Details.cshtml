@@ -1,0 +1,70 @@
+﻿@page
+@model RazorPagesUI.Pages.Artisti.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="custom-heading">Details</h1>
+
+<div class="form-custom">
+    <h4>ArtistiColectie</h4>
+    <hr />
+    <dl class="row">
+        <!-- Artist Details -->
+        <dt class="col-sm-2">Nume Artist</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.ArtistiColectie.ArtistName)</dd>
+
+        <dt class="col-sm-2">Gen Muzical</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.ArtistiColectie.Genre)</dd>
+
+        <dt class="col-sm-2">Cel Mai Mare Hit</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.ArtistiColectie.BiggestHit)</dd>
+
+        <dt class="col-sm-2">Chitara Favorita</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.ArtistiColectie.FavoriteGuitar)</dd>
+
+        <!-- Hits Details -->
+        <dt class="col-sm-2">Hituri</dt>
+        <dd class="col-sm-10">
+            <ul>
+                @foreach (var hit in Model.ArtistiColectie.Hits)
+                {
+                    <li>@hit.NumeHit (Lansat la: @hit.DataDeLansare.ToShortDateString())</li>
+                }
+            </ul>
+        </dd>
+
+        <!-- Guitars Details -->
+        <dt class="col-sm-2">Chitare</dt>
+        <dd class="col-sm-10">
+            <ul>
+                @foreach (var guitar in Model.ArtistiColectie.Guitars)
+                {
+                    <li>@guitar.Title (@guitar.Brand, @guitar.Model)</li>
+                }
+            </ul>
+        </dd>
+
+        <!-- Concerts Details -->
+        <dt class="col-sm-2">Concerte</dt>
+        <dd class="col-sm-10">
+            <ul>
+                @foreach (var concert in Model.ArtistiColectie.Concerts)
+                {
+                    <li>@concert.NumeConcert (Data: @concert.DataConcert.ToShortDateString(), Locatie: @concert.Locatie)</li>
+                }
+            </ul>
+        </dd>
+    </dl>
+</div>
+
+<div class="mt-3">
+    <a asp-page="./Edit" asp-route-id="@Model.ArtistiColectie?.ArtistId" class="btn btn-custom">Edit</a>
+    <a asp-page="./Index" class="btn btn-custom">Back to List</a>
+
+</div>
+
+@section Scripts {
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,49 @@
+﻿@page
+@model RazorPagesUI.Pages.Chitare.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>ChitareColectie</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ChitareColectie.Title)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ChitareColectie.Title)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ChitareColectie.Brand)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ChitareColectie.Brand)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ChitareColectie.Model)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ChitareColectie.Model)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ChitareColectie.DataFabricarii)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ChitareColectie.DataFabricarii)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ChitareColectie.Rating)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ChitareColectie.Rating)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.ChitareColectie?.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

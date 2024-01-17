@@ -1,0 +1,77 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Mea Muzicală</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        p {
+            line-height: 1.6;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Music.net</h1>
+    </header>
+
+    <section>
+        <h2>Despre Music.net</h2>
+        <p>Bine ați venit pe pagina Music.net! Sunt pasionat de muzică și împărtășesc cu voi câteva dintre preferințele mele.</p>
+    </section>
+
+    <section>
+        <h2>Playlist</h2>
+        <ul>
+            <li><strong>Bad Romance:</strong> Lady Gaga</li>
+            <li><strong>We will rock you:</strong> Queen</li>
+            <li><strong>Gimme gimme:</strong> ABBA</li>
+            <!-- Adaugă mai multe melodii aici -->
+        </ul>
+    </section>
+
+    <section>
+        <h2>Noutăți Muzicale</h2>
+        <p>Urmați-mă pentru a fi la curent cu ultimele noutăți muzicale și evenimente.</p>
+    </section>
+
+   
+</body>
+</html>

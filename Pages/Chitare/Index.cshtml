@@ -1,0 +1,75 @@
+﻿@page
+@model RazorPagesUI.Pages.Chitare.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+
+<br/>
+<form asp-controller="Index" asp-action="Index" method="get">
+      <p>
+          Title: <input type="text" name="SearchString"/>
+          <input type="submit"  value="Filter"/>
+
+
+      </p>
+
+
+
+</form>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ChitareColectie[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ChitareColectie[0].Brand)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ChitareColectie[0].Model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ChitareColectie[0].DataFabricarii)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ChitareColectie[0].Rating)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.ChitareColectie) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Brand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataFabricarii)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rating)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

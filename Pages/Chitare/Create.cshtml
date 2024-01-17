@@ -1,0 +1,54 @@
+﻿@page
+@model RazorPagesUI.Pages.Chitare.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>ChitareColectie</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ChitareColectie.Title" class="control-label"></label>
+                <input asp-for="ChitareColectie.Title" class="form-control" />
+                <span asp-validation-for="ChitareColectie.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ChitareColectie.Brand" class="control-label"></label>
+                <input asp-for="ChitareColectie.Brand" class="form-control" />
+                <span asp-validation-for="ChitareColectie.Brand" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ChitareColectie.Model" class="control-label"></label>
+                <input asp-for="ChitareColectie.Model" class="form-control" />
+                <span asp-validation-for="ChitareColectie.Model" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ChitareColectie.DataFabricarii" class="control-label"></label>
+                <input asp-for="ChitareColectie.DataFabricarii" class="form-control" />
+                <span asp-validation-for="ChitareColectie.DataFabricarii" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ChitareColectie.Rating" class="control-label"></label>
+                <input asp-for="ChitareColectie.Rating" class="form-control" />
+                <span asp-validation-for="ChitareColectie.Rating" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

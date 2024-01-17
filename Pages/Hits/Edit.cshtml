@@ -1,0 +1,54 @@
+﻿@page
+@model RazorPagesUI.Pages.Hits.EditModel
+
+@{
+    ViewData["Title"] = "Edit Hit";
+}
+
+<h1 class="custom-heading">Edit Hit</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-custom">
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Hituri.HitId" />
+
+                <div class="form-group">
+                    <label asp-for="Hituri.NumeHit" class="control-label label-custom">Nume Hit</label>
+                    <input asp-for="Hituri.NumeHit" class="form-control form-control-custom" />
+                    <span asp-validation-for="Hituri.NumeHit" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Hituri.DataDeLansare" class="control-label label-custom">Data de Lansare</label>
+                    <input asp-for="Hituri.DataDeLansare" class="form-control form-control-custom" type="date" />
+                    <span asp-validation-for="Hituri.DataDeLansare" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Hituri.Album" class="control-label label-custom">Album</label>
+                    <input asp-for="Hituri.Album" class="form-control form-control-custom" />
+                    <span asp-validation-for="Hituri.Album" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Hituri.ArtistId" class="control-label label-custom">Artist</label>
+                    <select asp-for="Hituri.ArtistId" asp-items="ViewBag.ArtistId" class="form-control form-control-custom"></select>
+                </div>
+
+                <br />
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-custom" />
+                    <a asp-page="Index" class="btn btn-custom">Back to List</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
